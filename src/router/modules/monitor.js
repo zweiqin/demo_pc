@@ -7,16 +7,16 @@ const monitor = {
 	path: '/monitor',
 	component: Layout,
 	redirect: '/monitor/operlog',
-	name: '商户',
+	name: '操作',
 	meta: {
-		title: '商户管理', icon: 'el-icon-platform-eleme'
+		title: '操作管理', icon: 'el-icon-platform-eleme'
 	},
 	children: [
 		{
 			path: '/monitor/operlog',
 			component: () => import('@/views/monitor/operlog'),
-			name: '商户列表',
-			meta: { title: '商户列表' }
+			name: '操作日志',
+			meta: { title: '操作日志' }
 		}
 	]
 }

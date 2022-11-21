@@ -385,21 +385,21 @@ export default {
 			GetMenuList({ menu_type: meaning ? '' : this.menu_type, pid: '', is_show: '' })
 				.then((res) => {
 					this.tableData.data = res.data || []
-					if (meaning) this.parent_list = res.data || []
+					if (meaning) (this.parent_list = res.data || []) && (this.menu_type = '')
 				})
 				.catch((err) => {
 					this.$message.error(err.data.msg)
 				})
 		},
-		// 分页
-		page_change(page) {
-			this.menuForm.page = page
-			this.getList(1)
-		},
-		handle_size_change(val) {
-			this.menuForm.limit = val
-			this.getList(1)
-		},
+		// // 分页
+		// page_change(page) {
+		// 	this.menuForm.page = page
+		// 	this.getList(1)
+		// },
+		// handle_size_change(val) {
+		// 	this.menuForm.limit = val
+		// 	this.getList(1)
+		// },
 
 		// s添加菜单
 		addClick() {
