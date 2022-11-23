@@ -16,35 +16,49 @@
 								@keyup.enter.native="handleQuery"
 							/>
 						</el-form-item>
-						<el-form-item label="接口地址" prop="interface_url">
-							<el-input
-								v-model="queryParams.interface_url"
-								placeholder="请输入接口地址"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
-						<el-form-item label="接口简介" prop="interface_dc">
-							<el-input
-								v-model="queryParams.interface_dc"
-								placeholder="请输入接口简介"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
-						<el-form-item label="请求方式" prop="interface_dc">
-							<el-input
+						<!--						<el-form-item label="接口地址" prop="interface_url">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.interface_url"-->
+						<!--								placeholder="请输入接口地址"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
+						<!--						<el-form-item label="接口简介" prop="interface_dc">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.interface_dc"-->
+						<!--								placeholder="请输入接口简介"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
+						<!--						<el-form-item label="请求方式" prop="interface_dc">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.request_method_like"-->
+						<!--								placeholder="请输入请求方式"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
+						<el-form-item label="请求方式" prop="operator_type">
+							<el-select
 								v-model="queryParams.request_method_like"
 								placeholder="请输入请求方式"
 								clearable
-								style="width: 240px;"
 								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
+								style="width: 240px"
+							>
+								<el-option label="Get" value="Get" />
+								<el-option label="Post" value="Post" />
+								<el-option label="Put" value="Put" />
+								<el-option label="Delete" value="Delete" />
+							</el-select>
 						</el-form-item>
 						<el-form-item label="用户类别" prop="operator_type">
 							<el-select
@@ -62,66 +76,66 @@
 								/>
 							</el-select>
 						</el-form-item>
-						<el-form-item label="操作人员" prop="oper_name_like">
+						<el-form-item label="人员账号" prop="oper_name_like">
 							<el-input
 								v-model="queryParams.oper_name_like"
-								placeholder="请输入操作人员"
+								placeholder="请输入操作人员账号"
 								clearable
 								style="width: 240px;"
 								size="small"
 								@keyup.enter.native="handleQuery"
 							/>
 						</el-form-item>
-						<el-form-item label="请求地址" prop="oper_url">
-							<el-input
-								v-model="queryParams.oper_url"
-								placeholder="请输入请求地址"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
-						<el-form-item label="主机地址" prop="oper_ip">
-							<el-input
-								v-model="queryParams.oper_ip"
-								placeholder="请输入主机地址"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
-						<el-form-item label="操作地点" prop="oper_location">
-							<el-input
-								v-model="queryParams.oper_ip"
-								placeholder="请输入操作地点"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
-						<el-form-item label="请求参数" prop="oper_param">
-							<el-input
-								v-model="queryParams.oper_param"
-								placeholder="请输入请求参数"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
-						<el-form-item label="返回参数" prop="oper_result">
-							<el-input
-								v-model="queryParams.oper_result"
-								placeholder="请输入返回参数"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
+						<!--						<el-form-item label="请求地址" prop="oper_url">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.oper_url"-->
+						<!--								placeholder="请输入请求地址"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
+						<!--						<el-form-item label="主机地址" prop="oper_ip">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.oper_ip"-->
+						<!--								placeholder="请输入主机地址"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
+						<!--						<el-form-item label="操作地点" prop="oper_location">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.oper_ip"-->
+						<!--								placeholder="请输入操作地点"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
+						<!--						<el-form-item label="请求参数" prop="oper_param">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.oper_param"-->
+						<!--								placeholder="请输入请求参数"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
+						<!--						<el-form-item label="返回参数" prop="oper_result">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.oper_result"-->
+						<!--								placeholder="请输入返回参数"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
 						<el-form-item label="状态" prop="status">
 							<el-select
 								v-model="queryParams.status"
@@ -138,16 +152,16 @@
 								/>
 							</el-select>
 						</el-form-item>
-						<el-form-item label="错误信息" prop="error_msg">
-							<el-input
-								v-model="queryParams.error_msg"
-								placeholder="请输入错误信息"
-								clearable
-								style="width: 240px;"
-								size="small"
-								@keyup.enter.native="handleQuery"
-							/>
-						</el-form-item>
+						<!--						<el-form-item label="错误信息" prop="error_msg">-->
+						<!--							<el-input-->
+						<!--								v-model="queryParams.error_msg"-->
+						<!--								placeholder="请输入错误信息"-->
+						<!--								clearable-->
+						<!--								style="width: 240px;"-->
+						<!--								size="small"-->
+						<!--								@keyup.enter.native="handleQuery"-->
+						<!--							/>-->
+						<!--						</el-form-item>-->
 						<el-form-item label="操作时间">
 							<el-date-picker
 								v-model="dateRange"
@@ -172,10 +186,10 @@
 
 			<el-table v-loading="loading" :data="list" @selection-change="handleSelectionChange">
 				<!--				<el-table-column type="selection" width="55" align="center" />-->
-				<el-table-column label="日志编号" align="center" prop="id" />
-				<el-table-column label="接口模块标题" align="center" prop="interface_tags" />
-				<el-table-column label="接口地址" align="center" prop="interface_url" />
-				<!--				<el-table-column label="接口简介" align="center" prop="interface_dc" />-->
+				<el-table-column label="日志编号" width="80" align="center" prop="id" />
+				<el-table-column label="接口模块标题" align="left" prop="interface_tags" />
+				<el-table-column label="接口地址" min-width="120" align="left" prop="interface_url" :show-overflow-tooltip="true" />
+				<el-table-column label="接口简介" align="left" prop="interface_dc" :show-overflow-tooltip="true" />
 				<el-table-column label="请求方式" align="center" prop="request_method" />
 
 				<el-table-column label="操作用户类别" min-width="80" align="center" prop="operator_type">
@@ -189,15 +203,23 @@
 				</el-table-column>
 
 				<el-table-column label="操作人员" align="center" prop="real_name" />
+				<el-table-column label="人员账号" align="center" prop="oper_name" />
 				<!--				<el-table-column label="请求地址" align="center" prop="oper_url" width="130" :show-overflow-tooltip="true" />-->
 				<!--				<el-table-column label="主机地址" align="center" prop="oper_ip" :show-overflow-tooltip="true" />-->
-				<el-table-column label="操作地点" align="center" prop="oper_location" :show-overflow-tooltip="true" />
+				<!--				<el-table-column label="操作地点" align="center" prop="oper_location" :show-overflow-tooltip="true" />-->
 				<!--				<el-table-column label="请求参数" align="center" prop="oper_param" :show-overflow-tooltip="true" />-->
 				<!--				<el-table-column label="返回参数" align="center" prop="oper_result" :show-overflow-tooltip="true" />-->
 				<el-table-column
 					label="操作状态" align="center" prop="status"
 					:formatter="(row, column, cellValue, index)=>cellValue===0?'正常':'异常'"
-				/>
+				>
+					<template v-slot="scope">
+						<div>
+							<el-tag v-if="scope.row.status === 0" type="success">正常</el-tag>
+							<el-tag v-else type="danger">异常</el-tag>
+						</div>
+					</template>
+				</el-table-column>
 				<!--				<el-table-column label="错误信息" align="center" prop="error_msg	" :show-overflow-tooltip="true" />-->
 				<el-table-column label="操作时间" align="center" prop="oper_time" width="180" />
 
@@ -218,8 +240,8 @@
 			<div class="block">
 				<el-pagination
 					:page-sizes="[10, 20, 30, 60, 80]"
-					:page-size="queryParams.pageSize"
-					:current-page="queryParams.pageNum"
+					:page-size="queryParams.limit"
+					:current-page="queryParams.page"
 					layout="total, sizes, prev, pager, next, jumper"
 					:total="total"
 					@size-change="handle_size_change"
@@ -230,14 +252,15 @@
 		</el-card>
 
 		<!-- 操作日志详细 -->
-		<el-dialog title="操作日志详细" :visible.sync="open" width="700px" append-to-body top="5vh">
-			<el-form ref="form" :model="form" label-width="100px" size="mini">
+		<el-dialog title="操作日志详细" :visible.sync="open" width="900px" append-to-body top="5vh">
+			<el-form ref="form" :model="form" label-position="left" label-width="100px" size="mini">
 				<el-row>
 
 					<el-col :span="12">
 						<el-form-item label="日志编号：">{{ form.id }}</el-form-item>
-						<el-form-item label-width="110px" label="接口模块标题：">{{ form.interface_tags }}</el-form-itemlabel-width>
-						</el-form-item></el-col>
+						<el-form-item label-width="110px" label="接口模块标题：">{{ form.interface_tags }}
+						</el-form-item>
+					</el-col>
 					<el-col :span="24">
 						<el-form-item label="接口地址：">{{ form.interface_url }}</el-form-item>
 					</el-col>
@@ -260,6 +283,9 @@
 						<el-form-item label="操作人员：">{{ form.real_name }}</el-form-item>
 					</el-col>
 					<el-col :span="24">
+						<el-form-item label="人员账号：">{{ form.oper_name }}</el-form-item>
+					</el-col>
+					<el-col :span="24">
 						<el-form-item label="请求地址：">{{ form.oper_url }}</el-form-item>
 					</el-col>
 					<el-col :span="24">
@@ -276,12 +302,14 @@
 					</el-col>
 					<el-col :span="12">
 						<el-form-item label="操作状态：">
-							<div v-if="form.status === 1">正常</div>
-							<div v-else>失败</div>
+							<div>
+								<el-tag v-if="form.status === 0" type="success">正常</el-tag>
+								<el-tag v-else type="danger">异常</el-tag>
+							</div>
 						</el-form-item>
 					</el-col>
 					<el-col :span="24">
-						<el-form-item label="错误信息：">{{ form.error_msg }}</el-form-item>
+						<el-form-item label="错误信息：">{{ form.error_msg||"无" }}</el-form-item>
 					</el-col>
 					<el-col :span="24">
 						<el-form-item label="操作时间：">{{ form.oper_time }}</el-form-item>
@@ -332,8 +360,8 @@ export default {
 			form: {},
 			// 查询参数
 			queryParams: {
-				pageNum: 1,
-				pageSize: 30,
+				page: 1,
+				limit: 30,
 				interface_tags_like: undefined,
 				interface_url: '',
 				interface_dc: '',
@@ -379,8 +407,8 @@ export default {
 		resetQuery() {
 			this.dateRange = []
 			this.queryParams = {
-				pageNum: 1,
-				pageSize: 30,
+				page: 1,
+				limit: 30,
 				interface_tags_like: '',
 				interface_url: '',
 				interface_dc: '',
@@ -412,11 +440,11 @@ export default {
 		},
 
 		page_change(page) {
-			this.shopForm.page = page
+			this.queryParams.page = page
 			this.getList('')
 		},
 		handle_size_change(val) {
-			this.shopForm.limit = val
+			this.queryParams.limit = val
 			this.getList('')
 		}
 	}
