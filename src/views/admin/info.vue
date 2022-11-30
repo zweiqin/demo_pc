@@ -58,7 +58,7 @@
 					<template v-slot="scope">
 						<!--						<el-button v-if="!is_del" type="text" size="small" class="mr10" @click="changePwd(scope.row)">修改密码</el-button>-->
 						<el-button
-							v-if="!is_del"
+							v-if="!scope.row.is_del"
 							type="text"
 							size="small"
 							class="mr10"
@@ -477,6 +477,8 @@ export default {
 			this.editForm.mer_id = e.mer_id
 			this.editForm.provider_id = e.provider_id
 			this.editForm.is_del = e.is_del
+			this.editForm.pwd = ''
+			this.editForm.cPwd = ''
 			e.admin_roles_list && e.admin_roles_list.forEach((item) => {
 				data.id = item.id
 				all.push(this.$deepClone(data))
@@ -583,6 +585,7 @@ export default {
 						this.$message.error('两次输入的密码不相同，请重新输入！')
 						this.editForm.pwd = ''
 						this.editForm.cPwd = ''
+						return
 					}
 
 					let flag = 0
